@@ -14,11 +14,14 @@ function App() {
     if (numberAllowed) str += "0123456789";
     if (charAllowed) str += "!@#$%^&*()_+";
 
-    for (let i = 1; i < length; i++) {
-      const char = Math.floor(Math.random() * str.length + 1);
+    for (let i = 1; i <= length; i++) {
+      const char = Math.floor(Math.random() * str.length);
+
+      console.log(char);
+
       pass += str.charAt(char);
       setPassword(pass);
-      console.log(char);
+      // console.log(char);
     }
   }, [length, numberAllowed, charAllowed]);
 
